@@ -1,0 +1,156 @@
+{
+    "rule": [
+        {
+            "tag": "h1",
+            "text": [
+                "InCTF 2025 – Official Rules"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "Organized by: Team bi0s, Amrita Vishwa Vidyapeetham",
+                "Venue: Amrita Vishwa Vidyapeetham, Bengaluru Campus",
+                "Platform: Traboda",
+                "Mode: Offline (Onsite Finals)"
+            ]
+        },
+        {
+            "tag": "h2",
+            "text": [
+                "About InCTF"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "India Capture The Flag (InCTF) is an annual national cybersecurity competition. By registering, all participants agree to follow these rules."
+            ]
+        },
+        {
+            "tag": "h2",
+            "text": [
+                "Eligibility Criteria"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "To compete in the onsite finals and be eligible for prizes, participants must:"
+            ]
+        },
+        {
+            "tag": "ul",
+            "text": [
+                "Be a current undergraduate (UG) or postgraduate (PG) student.",
+                "Be a citizen of the Republic of India."
+            ]
+        },
+        {
+            "tag": "h3",
+            "text": [
+                "Beginner Category Policy"
+            ]
+        },
+        {
+            "tag": "ul",
+            "text": [
+                "InCTF supports new talent.",
+                "Participants with prior experience (e.g., internships, active CTF club involvement, competitive achievements, advanced training) are not considered beginners.",
+                "Misrepresenting your experience will lead to disqualification from the Beginner category and potentially the entire competition.",
+                "Beginner teams will be ranked with all participants and receive special recognition during the finals."
+            ]
+        },
+        {
+            "tag": "h3",
+            "text": [
+                "Educational Background"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "All participants must be actively enrolled UG or PG students. If you are in a non-traditional educational format or are an independent learner, you must notify the organizers for eligibility verification."
+            ]
+        },
+        {
+            "tag": "h3",
+            "text": [
+                "Team Composition"
+            ]
+        },
+        {
+            "tag": "ul",
+            "text": [
+                "Teams must have a minimum of two (2) and a maximum of four (4) members.",
+                "All team members must meet the individual eligibility criteria.",
+                "Teams must be finalized during registration. No changes or substitutions are allowed after registration is complete."
+            ]
+        },
+        {
+            "tag": "h2",
+            "text": [
+                "Participation Conduct"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "Participants must uphold academic honesty and ethical standards."
+            ]
+        },
+        {
+            "tag": "h3",
+            "text": [
+                "Prohibited Actions Include:"
+            ]
+        },
+        {
+            "tag": "ul",
+            "text": [
+                "Sharing answers, hints, or solutions with others",
+                "Using solutions that were already available before the contest",
+                "Violating these rules will result in disqualification and may affect your ability to participate in future InCTF events."
+            ]
+        },
+        {
+            "tag": "h2",
+            "text": [
+                "Certificates"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "Certificates will be issued based on your registration profile. Please ensure accuracy. You can make corrections until the contest begins. Post-event corrections must be requested via email within seven (7) days."
+            ]
+        },
+        {
+            "tag": "h3",
+            "text": [
+                "Types of Certificates:"
+            ]
+        },
+        {
+            "tag": "ul",
+            "text": [
+                "Participation Certificate: For all teams with a non-zero score in the Online Qualifier (Digital PDF, emailed).",
+                "Certificate of Appreciation: For performing teams in the Online Qualifier (Digital PDF, emailed).",
+                "Certificate of Achievement: For winning teams in the Onsite Finals (Physical copy, mailed to registered addresses)."
+            ]
+        },
+        {
+            "tag": "h2",
+            "text": [
+                "Support and Queries"
+            ]
+        },
+        {
+            "tag": "p",
+            "text": [
+                "For help with eligibility, registration, or profile updates, contact:",
+                 "<a href=\"mailto:inctf@am.amrita.edu\">📧 inctf@am.amrita.edu</a>"
+            ]
+        }
+    ]
+}

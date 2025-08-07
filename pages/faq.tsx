@@ -1,0 +1,133 @@
+import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
+import { Waypoint } from 'react-waypoint';
+
+import TopBar from '../src/components/shared/TopBar';
+import faq from '../src/data/faq';
+import QuestionCard from '../src/components/faq/QuestionCard';
+import Footer from '../src/components/shared/Footer';
+import FAQFilter from '../src/components/faq/Filter';
+import filteredFAQ from '../src/components/faq/filterUtils';
+import SiteView from '../src/components/SiteView';
+
+const FAQSection = styled.section`
+  width: 100%;
+  overflow-y: hidden;
+  color: #333;
+
+  h1 {
+    font-weight: 900;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+`;
+
+const totalTags = [...faq.reduce((acc, f) => {
+  const _acc = new Set([...acc]);
+  f.tags.forEach(tag => _acc.add(tag));
+  return _acc;
+}, new Set)].map(faq => ({ value: faq, label: faq }));
+
+const FAQPage = () => {
+
+  const [totalVisible, setTotalVisible] = useState(10);
+  const [openQ, setOpen] = useState(0);
+  const [search, setSearch] = useState('');
+  const [tags, setTags] = useState(new Set());
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!router.isReady) return;
+    const { q } = router.query;
+    setSearch(q as string ?? '');
+  }, [router.isReady]);
+
+  useEffect(() => {
+    const items = filteredFAQ(search, tags);
+    if (items.length > 0) {
+      setOpen(0); // Open first question if results exist
+    } else {
+      setOpen(null); // No questions to open if no results
+    }
+  }, [search, tags]);
+
+  const updateTotalVisible = (value) =>
+    setTotalVisible(Math.max(10, Math.min(value, filteredFAQ(search, tags).length)));
+
+  const renderFAQ = () => {
+    const items = filteredFAQ(search, tags, totalVisible);
+    return items?.length > 0 ? (
+      items.map((q, i) => (
+        <QuestionCard
+          question={q.question}
+          answer={q.answer}
+          search={search}
+          isOpen={i === openQ}
+          onClick={() => setOpen(i === openQ ? null : i)}
+          key={i}
+        />
+      ),
+      )
+    ) : (
+      <div className="py-5 text-center">
+        <h4 className="text-3xl mb-4">No Answers Found 😔</h4>
+        <p className="text-dark ">
+          Your question in not one among our frequently asked questions.
+          You could try rephrasing the question in a different way, or
+          can join our 
+          {' '}
+          <a href="/discord" target="_blank" className="text-blue-600 hover:text-blue-800 hover:underline">
+            discord community
+            <i className="fa fa-external-link ml-1" />
+            {' '}
+          </a>
+          {' '}
+          to ask us directly.
+        </p>
+      </div>
+    );
+  };
+
+  return (
+    <SiteView meta={{ title: 'Frequently Asked Questions (FAQ)' }}>
+      <TopBar />
+      <FAQSection>
+        <h1 className="text-primary text-center text-3xl lg:text-6xl py-4">Frequently Asked Questions</h1>
+        <div className="px-6 mx-auto" style={{ maxWidth: 800, minHeight: '50vh' }}>
+          <FAQFilter
+            search={search}
+            setSearch={setSearch}
+            tags={tags}
+            setTags={setTags}
+            totalTags={totalTags}
+          />
+          {renderFAQ()}
+          <Waypoint onEnter={() => updateTotalVisible(totalVisible + 4)}>
+            <div className="my-6 text-center">
+              <div style={{ color: '#111' }}>Did not find what you were looking for?</div>
+              <div style={{ color: '#222' }}>
+                Write to us at 
+                {' '}
+                <a 
+                  href="mailto:inctf@am.amrita.edu" 
+                  className="text-blue-600 hover:text-blue-800 hover:underline"
+                >
+                  inctf@am.amrita.edu
+                </a>
+              </div>
+            </div>
+          </Waypoint>
+        </div>
+      </FAQSection>
+      <Footer />
+    </SiteView>
+  );
+
+};
+
+export default FAQPage;

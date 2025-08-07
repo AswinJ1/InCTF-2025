@@ -1,0 +1,13 @@
+title: End of it
+id: 1034
+category: Forensics
+difficulty: Easy
+content: |
+  **Author**: [v1Ru5](https://twitter.com/SrideviKrishn16)
+
+  Use 'strings' and decode the caesar ciphertext using any online tool to get the flag.
+
+  ![](https://i.imgur.com/YlVI3Um.png)
+
+
+  ![](https://i.imgur.com/rC4GorK.png)
