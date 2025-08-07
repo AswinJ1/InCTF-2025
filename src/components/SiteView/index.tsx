@@ -17,6 +17,17 @@ const SiteView = ({ meta, children }: AppView) => {
   return (
     <ConfigContext.Provider value={eventConfig}>
       <SiteViewHeadTags meta={meta} />
+      
+      {/* GTM noscript - Add this at the very beginning */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NXQWL52R"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
+      
       <main>
         {children}
       </main>

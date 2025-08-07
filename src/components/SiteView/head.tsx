@@ -20,14 +20,12 @@ type SiteViewHeadTags = {
 
 
 const SiteViewHeadTags = ({ meta: _meta }: SiteViewHeadTags) => {
-
   const { meta, theme, analytics } = useContext(ConfigContext);
-
   const pageTitle = _meta?.title ? `${_meta?.title} | ${meta?.title}` : `${meta.title} | ${meta.tagLine}`;
 
   return (
     <Head>
-      {/* Google Tag Manager - Add this first */}
+      {/* Google Tag Manager - MUST BE FIRST */}
       <script
         dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
