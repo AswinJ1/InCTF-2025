@@ -10,7 +10,7 @@ const seoTags = {
 const Base = ({ children, meta }) => {
 
   const title = `${meta && meta.title ? `${meta.title} |` : '' } ${seoTags.siteName} - ${seoTags.tagLine}`;
-  const GTMId = 'GTM-NXQWL52R';
+  const GTMId = 'GTM-56DCPP26';
 
   useEffect(() => {
     navigator.serviceWorker.getRegistrations().then((registrations) => {

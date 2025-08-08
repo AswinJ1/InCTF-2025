@@ -21,7 +21,7 @@ const SiteView = ({ meta, children }: AppView) => {
       {/* GTM noscript - Add this at the very beginning */}
       <noscript>
         <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-NXQWL52R"
+          src="https://www.googletagmanager.com/ns.html?id=GTM-56DCPP26"
           height="0"
           width="0"
           style={{ display: 'none', visibility: 'hidden' }}

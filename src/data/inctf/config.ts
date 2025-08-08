@@ -8,8 +8,7 @@ export default <ConfigContextType>{
     description: 'Capture the Flag contest. India’s first hacking competition. Play CTFs, win prizes and get placed with our sponsors.',
   },
   analytics: {
-    gTag: 'UA-120910433-1',
-    gtmContainerId: 'GTM-NXQWL52R', // Add this line
+    gtmContainerId: 'GTM-56DCPP26',
   },
   assets: {
     logo: {

@@ -18,7 +18,6 @@ type SiteViewHeadTags = {
   meta: PageMeta
 };
 
-
 const SiteViewHeadTags = ({ meta: _meta }: SiteViewHeadTags) => {
   const { meta, theme, analytics } = useContext(ConfigContext);
   const pageTitle = _meta?.title ? `${_meta?.title} | ${meta?.title}` : `${meta.title} | ${meta.tagLine}`;
@@ -32,7 +31,7 @@ const SiteViewHeadTags = ({ meta: _meta }: SiteViewHeadTags) => {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NXQWL52R');`,
+})(window,document,'script','dataLayer','${analytics?.gtmContainerId}');`,
         }}
       />
       
@@ -45,27 +44,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {_meta?.image && <meta property="og:image" content={_meta.image} />}
       <meta property="og:site_name" content={meta?.title} />
       <meta name="theme-color" content={theme?.primary} />
-      {analytics?.gTag && <React.Fragment>
-        <script
-          rel="preconnect"
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${analytics?.gTag}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-                            window.dataLayer = window.dataLayer || []; 
-                            function gtag(){
-                                dataLayer.push(arguments);
-                            } 
-                            gtag('js', new Date()); gtag('config', '${analytics?.gTag}');
-                        `,
-          }}
-        />
-        </React.Fragment>}
     </Head>
   );
-
 };
 
 export default SiteViewHeadTags;
